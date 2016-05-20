@@ -21,7 +21,7 @@ function getFileContent (path) {
   return filecontent;
 }
 
-function parseHtml (path, outputFile = false) {
+function parseHtml (path) {
   let fileContent = getFileContent(path);
   
   while (fileContent.includes('<!-- import: ')) {
