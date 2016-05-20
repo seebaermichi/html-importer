@@ -1,6 +1,6 @@
 # HTML-Importer
 
-Build HTML-file out of many different HTML-snippets.
+Build HTML-file out of different HTML-snippets.
 
 [![travis build](https://img.shields.io/travis/seebaermichi/html-importer.svg?style=flat-square)](https://travis-ci.org/seebaermichi/html-importer)
 [![version](https://img.shields.io/npm/v/html-importer.svg?style=flat-square)](https://www.npmjs.com/package/html-importer)
@@ -9,13 +9,80 @@ Build HTML-file out of many different HTML-snippets.
 
 
 ## Install
-tbd
+Run in your project directory.
+```
+npm install --save-dev html-importer
+```
 
 ## Usage
-tbd
+Create `index.html`
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test html-importer</title>
+</head>
+<body>
+  <!-- import: html/header.html -->
+  <!-- import: html/main.html -->
+  <!-- import: html/footer.html -->
+</body>
+</html>
+```
 
-## Examples
-tbd
+Create `html/header.html`
+```
+<header>
+  This is the header!
+</header>
+```
+
+Create `html/main.html`
+```
+<main>
+  This is main!
+</main>
+```
+Create `html/footer.html`
+```
+<footer>
+  This is the footer.
+</footer>
+```
+
+
+Make sure imported files exist. The path is relative to your project root-directory.
+
+Create `index.js`
+```
+import htmlImporter from 'html-importer';
+
+const parsedHtml = htmlImporter.parsedHtml('index.html');
+```
+
+`parsedHtml` should now include
+```
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test html-importer</title>
+</head>
+<body>
+  <header>
+    This is the header!
+  </header>
+  <main>
+    This is main!
+  </main>
+  <footer>
+    This is the footer.
+  </footer>
+</body>
+</html>
+```
+
 
 ## Notes
 tbd
@@ -24,6 +91,6 @@ tbd
 HTML-Importer is released under the MIT License. See [LICENSE][1] file for details.
 
 ## Links
-
+tbd
 
 [1]: https://github.com/seebaermichi/html-importer/blob/master/LICENSE
