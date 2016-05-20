@@ -2,19 +2,10 @@
 
 Build HTML-file out of many different HTML-snippets.
 
-## Notes for Development
-### What should it do?
-It should parse HTML from an entry file like `index.html`. If it finds:
-```
-<!-- import: path/to/html-snippet.html -->
-```
-it should read the content of this file and replace the `import` statement with the content of the imported file.  
-Stop parsing if no further `import` statement is found.
-
-### How could this work?
-* Create a module.
-* Parse by calling `module.parse(input-file.html, [output-file.html])`
-* `module.parse(input-file.html, [output-html.html])` outputs a string
+[![travis build](https://img.shields.io/travis/seebaermichi/html-importer.svg?style=flat-square)](https://travis-ci.org/seebaermichi/html-importer)
+[![version](https://img.shields.io/npm/v/html-importer.svg?style=flat-square)](https://www.npmjs.com/package/html-importer)
+[![coverage](https://img.shields.io/codecov/c/github/seebaermichi/html-importer.svg?style=flat-square)](https://codecov.io/gh/seebaermichi/html-importer)
+[![issues](https://img.shields.io/github/issues/seebaermichi/html-importer.svg?style=flat-square)](https://github.com/seebaermichi/html-importer/issues)
 
 
 ## Install
