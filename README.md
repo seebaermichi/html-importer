@@ -26,4 +26,4 @@ HTML-Importer is released under the MIT License. See [LICENSE][1] file for detai
 ## Links
 
 
-[1]: https://github.com/seebaermichi/html-importer/LICENSE
+[1]: https://github.com/seebaermichi/html-importer/blob/master/LICENSE
