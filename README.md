@@ -85,7 +85,8 @@ const parsedHtml = htmlImporter.parsedHtml('index.html');
 
 
 ## Notes
-tbd
+Since this is my first real live tool I would be really happy about any feedback. So please feel free to create an issue if you have any notes about features or code.  
+Thanks in advance.
 
 ## License
 HTML-Importer is released under the MIT License. See [LICENSE][1] file for details.
