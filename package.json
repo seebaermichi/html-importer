@@ -11,7 +11,7 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "mocha src/test/index.js --compilers js:babel-register",
     "test:watch": "npm t -- -w",
-    "cover": "nyc npm t report --reporter=lcov > coverage.json"
+    "cover": "nyc report --reporter=lcov > coverage.json"
   },
   "repository": {
     "type": "git",
