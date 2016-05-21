@@ -58,7 +58,7 @@ Create `index.js`
 ```
 import htmlImporter from 'html-importer';
 
-const parsedHtml = htmlImporter.parsedHtml('index.html');
+const parsedHtml = htmlImporter.parseHtml('index.html');
 ```
 
 `parsedHtml` should now include
