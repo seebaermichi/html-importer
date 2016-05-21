@@ -8,11 +8,10 @@
     "prebuild": "rimraf dist",
     "commit": "git-cz",
     "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "report-coverage": "cat ./coverage/lcov.info | codecov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "mocha src/test/index.js --compilers js:babel-register",
     "test:watch": "npm t -- -w",
-    "cover": "nyc npm t"
+    "cover": "nyc npm t > coverage.json"
   },
   "repository": {
     "type": "git",
