@@ -8,11 +8,10 @@
     "prebuild": "rimraf dist",
     "commit": "git-cz",
     "check-coverage": "nyc check-coverage --statements 100 --branches 100 --functions 100 --lines 100",
-    "report-coverage": "cat ./coverage/lcov.info | codecov",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "test": "mocha src/test/index.js --compilers js:babel-register",
     "test:watch": "npm t -- -w",
-    "cover": "nyc npm t"
+    "cover": "nyc npm t > coverage.json"
   },
   "repository": {
     "type": "git",
@@ -59,7 +58,6 @@
     "babel-preset-stage-2": "6.5.0",
     "babel-register": "6.9.0",
     "chai": "3.5.0",
-    "codecov.io": "0.1.6",
     "commitizen": "2.8.1",
     "cz-conventional-changelog": "1.1.6",
     "ghooks": "1.2.1",

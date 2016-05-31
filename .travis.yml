@@ -16,9 +16,10 @@ script:
   - npm run check-coverage
   - npm run build
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
-  - npm run report-coverage
   - npm run semantic-release
+  - ls -al
+  - ls -al coverage
+  - bash <(curl -s https://codecov.io/bash)
 branches:
   only:
     - master
