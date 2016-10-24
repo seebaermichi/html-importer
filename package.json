@@ -1,4 +1,4 @@
-{
+npm {
   "name": "html-importer",
   "version": "0.0.0-semantically-released",
   "description": "Import HTML-snippets to build a single HTML file.",
