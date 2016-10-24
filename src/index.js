@@ -10,7 +10,7 @@ export default {
 
 function getPath (string) {
   const exp = / *(<!-- import: )(.*)( -->)/;
-  let path = string.match(exp)[0].trim();
+  let path = string.match(exp)[2].trim();
   
   return path;
 }
