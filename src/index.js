@@ -1,39 +1,58 @@
-import fs from 'fs';
-import path from 'path';
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _fs = require('fs');
+
+var _fs2 = _interopRequireDefault(_fs);
+
+var _path = require('path');
+
+var _path2 = _interopRequireDefault(_path);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 global.appPath = process.cwd();
 
-export default {
+module.exports = {
   getPath: getPath,
   getFileContent: getFileContent,
   parseHtml: parseHtml
-}
+};
 
-function getPath (string) {
-  const exp = / *(<!-- import: )(.*)( -->)/;
-  let path = string.match(exp)[2].trim();
-  
+
+function getPath(string) {
+  var exp = / *(<!-- import: )(.*)( -->)/;
+  var path = string.match(exp)[2].trim();
+
   return path;
 }
 
-function getFileContent (path) {
-  let filecontent = fs.readFileSync(`${appPath}/${path}`, 'utf8').trim();
-  
+function getFileContent(path) {
+  var filecontent = _fs2.default.readFileSync(appPath + '/' + path, 'utf8').trim();
+
   return filecontent;
 }
 
-function parseHtml (path) {
-  let fileContent = getFileContent(path);
-  
-  while (fileContent.includes('<!-- import: ')) {
-    let spaces = fileContent.match(` *(?=<!-- import: )`)[0];
-    let newFile = getPath(fileContent);
-    let newFileContent = getFileContent(newFile);
+function parseHtml(path) {
+  var fileContent = getFileContent(path);
+
+  var _loop = function _loop() {
+    var spaces = fileContent.match(' *(?=<!-- import: )')[0];
+    var newFile = getPath(fileContent);
+    var newFileContent = getFileContent(newFile);
     newFileContent = newFileContent.replace(/(?:\r\n|\r|\n)/g, function (linebreak) {
-      return `${linebreak}${spaces}`
+      return '' + linebreak + spaces;
     });
-    
-    fileContent = fileContent.replace(`<!-- import: ${newFile} -->`, newFileContent);
+
+    fileContent = fileContent.replace('<!-- import: ' + newFile + ' -->', newFileContent);
+  };
+
+  while (fileContent.includes('<!-- import: ')) {
+    _loop();
   }
-  
+
   return fileContent;
 }
